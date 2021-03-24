@@ -1,29 +1,70 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery ,graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import styled from 'styled-components'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+const PageWrapper =styled.main`
+  max-width:1020px;
+  font-family:'GFS Didot';
+`
+const TextInfo =styled.div`
+  h1 {
+    font-family: 'GFS Didot' , sans-serif;
+  }
+  h5 {
+    font-family: 'GFS Didot' , sans-serif;
+  }
+`
+
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      books: allMdx(filter: {frontmatter: {tags: {eq: "Λογοτεχνεία"}}}) {
+      edges {
+        node {
+          frontmatter {
+            author
+            title
+            slug
+            tags
+            date(formatString: "Do MMM YYYY")
+            excerpt
+          }
+        }
+      }
+    }
+      photography: allMdx(filter: {frontmatter: {tags: {eq: "Photography"}}}) {
+            edges {
+              node {
+                frontmatter {
+                  title
+                  tags
+                  slug
+                  date(formatString: "Do MMM YYYY")
+                  excerpt
+          }
+        }
+      }
+    }
+    }
+  `)
+  return (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
+    {data.books.edges.map(book => (
+      <PageWrapper>
+        <TextInfo>
+          <h1>{book.node.frontmatter.title}</h1>
+          <h5>{book.node.frontmatter.author}</h5>
+        </TextInfo>
+      </PageWrapper>
+    ))}
   </Layout>
-)
+  )
+}
+
 
 export default IndexPage

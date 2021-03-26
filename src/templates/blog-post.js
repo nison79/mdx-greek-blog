@@ -8,7 +8,7 @@ const PageWrapper =styled.div`
   display:grid;
   grid-template-columns:1fr;
   /* max-width:1020px; */
-  font-family: 'Poppins';
+  font-family: 'GFS Didot';
   @media(min-width:1200px) {
     display:flex;
     justify-content:center;
@@ -54,15 +54,15 @@ const TitleAuthor = styled.div`
   background-color:black;
     h1 {
     margin-top:1rem;
-    font-family: 'Poppins';
+    font-family: 'GFS Didot';
     color:white;
     }
     h5 {
-      font-family: 'Poppins';
+      font-family: 'GFS Didot';
       color:white;
     }
     p{
-      font-family: 'Poppins';
+      font-family: 'GFS Didot';
       color:white;
       font-size:0.8rem;
     }
@@ -85,9 +85,9 @@ export const data = graphql`
         frontmatter {
           title
           author
-          date(formatString:"Do MMM YYYY")
+          date(formatString:"Do MMMM YYYY",locale:"el_GR")
         }
-        rawBody
+        body
       }
     }
 `
@@ -103,7 +103,7 @@ const BlogPost = ( { data }) => {
           <p>{data.mdx.frontmatter.date}</p>
         </TitleAuthor>
         <Text>
-            <MDXRenderer>{data.mdx.rawBody}</MDXRenderer>
+            <MDXRenderer>{data.mdx.body}</MDXRenderer>
         </Text>
       </PageWrapper>
         <LinkStyled to='/'>&larr; Back to Home</LinkStyled>

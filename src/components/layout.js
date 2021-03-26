@@ -8,6 +8,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from 'styled-components'
 
 import Header from "./header"
 import "./layout.css"
@@ -28,18 +29,24 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
+        <Footer>
+          © {new Date().getFullYear()},
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+          <a href="https://www.gatsbyjs.com">Γεώργιος Νίκογλου</a>
+        </Footer>
     </>
   )
 }
+
+const Footer = styled.footer`
+  text-align:center;
+  bottom:0;
+  right:50;
+  a{
+    font-family:'GFS Didot' ,sans-serif;
+  }
+`
+
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

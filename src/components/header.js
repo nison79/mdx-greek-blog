@@ -1,25 +1,32 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 
 const StyledHeader = styled.div`
   display:grid;
   grid-template-columns:200px 1fr 200px;
+  grid-template-rows: 1fr 1fr;
   align-items:center;
   padding: 0.5rem 1rem; 
+  @media(max-width:960px){
+    grid-template-columns:1fr 1fr 1fr;
+    place-items:center;
+  }
 `
 
 const Logo = styled.div`
-  grid-column:1/2;
-  h1{
-      font-family:'GFS Didot' , sans-serif;
-      font-size:2rem;
-    }
+  grid-column:2/3;
+ 
+  .gatsby-image-wrapper {
+    margin: 0 auto;
+    
+  }
 `
 
 const MenuItems =styled.div`
-  grid-column:3/4;
+  grid-column:2/3;
+  grid-row: 2/3;
     h5{
       font-family:'GFS Didot' , sans-serif;
       font-size:1rem;
@@ -28,24 +35,32 @@ const MenuItems =styled.div`
 `
 const FlexMenuItems = styled.div`
   display:flex;
-  justify-content:space-around;
+  flex-direction:row;
+  justify-content:center;
+  h5{
+    padding:1rem;
+  }
 `
 
 const Header = ({ siteTitle  }) => (
   <StyledHeader>
     <Logo>
-        <h1>{siteTitle}</h1>
+        <StaticImage
+        src = "../images/header.svg"
+        alt="οψεις"
+        layout='fixed'
+        width={500}
+        /> 
     </Logo>
     <MenuItems>
       <FlexMenuItems>
-        <h5>άρθρα</h5>
-        <h5>άρθρα</h5>
-        <h5>άρθρα</h5>
+        <h5>λογοτεχνεία</h5>
+        <h5>πολιτική</h5>
+        <h5>τεχνολογία</h5>
       </FlexMenuItems>
     </MenuItems>
-
-
   </StyledHeader>
+  
 )
 
 Header.propTypes = {

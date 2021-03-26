@@ -26,6 +26,8 @@ const TitleAuthor = styled.div`
   margin-top:2rem;
   margin-bottom:2rem;
   width:20rem;
+  background: rgb(123,123,123);
+background: linear-gradient(0deg, rgba(123,123,123,1) 0%, rgba(255,255,255,1) 20%, rgba(91,91,91,1) 45%, rgba(0,0,0,1) 59%);
   box-shadow:
   0 10.1px 3.6px rgba(0, 0, 0, 0.068),
   0 10.4px 10px rgba(0, 0, 0, 0.115),

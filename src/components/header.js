@@ -1,6 +1,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { StaticImage } from 'gatsby-plugin-image'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 const StyledHeader = styled.div`
@@ -45,12 +46,14 @@ const FlexMenuItems = styled.div`
 const Header = ({ siteTitle  }) => (
   <StyledHeader>
     <Logo>
+      <Link to='/'>
         <StaticImage
         src = "../images/header.svg"
         alt="οψεις"
         layout='fixed'
         width={500}
         /> 
+        </Link>
     </Logo>
     <MenuItems>
       <FlexMenuItems>

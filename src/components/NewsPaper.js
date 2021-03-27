@@ -11,7 +11,7 @@ const PageWrapper = styled.div`
   flex-direction:row;
   justify-content:center;
   padding:3rem;
-  background-color:black;
+  background-color:#f6f7f9;
   
   @media(max-width:1054px) {
     display:flex;
@@ -35,26 +35,28 @@ const NewPaperLayout = styled.main`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.1fr 1fr;
   column-gap:1rem;
-  border:1px solid white;
+  background:#eff0f3;
+  border:1px solid #ff6e6c;
   padding:0.5rem;
   margin:0.5rem;
   font-family:'GFS Didot' ,san-serif;
   p{
-    color:white;
-    margin-bottom:1rem;
+    color:#2a2a2a;
+    margin-bottom:1.5rem;
     font-family:'GFS Didot' ,san-serif;
     grid-column:1/3;
     grid-row:1/2;
   }
   h1{
-    color:white;
+    padding:0rem;
+    color:#0d0d0d;
     font-size:1.5rem;
     font-family:'GFS Didot' ,san-serif;
     grid-column:1/2;
     grid-row:2/3;
   }
   h4 {
-    color:white;
+    color:#2a2a2a;
     font-weight:regular;
     font-family:'GFS Didot' ,san-serif;
     grid-column:2/3;
@@ -107,7 +109,7 @@ const NewsPaper = () => {
 }
 `)
 
-console.log(data);
+// console.log(data);
   return (
     <AllContent>
       <PageWrapper >

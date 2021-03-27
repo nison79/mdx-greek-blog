@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { graphql ,Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import styled from 'styled-components'
 
@@ -11,38 +12,37 @@ const PageWrapper =styled.div`
   font-family: 'GFS Didot';
   @media(min-width:1200px) {
     display:flex;
+    /* align-items:center; */
     justify-content:center;
   }
 `
 
 const TitleAuthor = styled.div`
-  display:flex;
-  flex-direction:column;
+  display: block;
+  /* flex-direction:column;
   align-items:center;
-  justify-content:center;
+  justify-content:center; */
   /* min-height:100vh; */
   padding:0rem 2rem;
   margin-right:5rem;
   margin-top:2rem;
   margin-bottom:2rem;
   width:20rem;
-  background: rgb(123,123,123);
-background: linear-gradient(0deg, rgba(123,123,123,1) 0%, rgba(255,255,255,1) 20%, rgba(91,91,91,1) 45%, rgba(0,0,0,1) 59%);
   box-shadow:
-  0 10.1px 3.6px rgba(0, 0, 0, 0.068),
+  /* 0 10.1px 3.6px rgba(0, 0, 0, 0.068), */
   0 10.4px 10px rgba(0, 0, 0, 0.115),
-  0 2.1px 24.1px rgba(0, 0, 0, 0.148),
-  0 90px 80px rgba(0, 0, 0, 0.2);
+  0 2.1px 24.1px rgba(0, 0, 0, 0.048),
+  0 90px 80px rgba(0, 0, 0, 0.055);
   animation: transform 600ms ease-in-out;
 
   @keyframes transform {
     from {
-      transform:translateX(-500px);
-      background-color:white;
+      transform:translateY(-1000px);
+      
     }
     to {
       transform:translateX(0px);
-      background-color:black;
+      
     }
   }
 
@@ -53,32 +53,47 @@ background: linear-gradient(0deg, rgba(123,123,123,1) 0%, rgba(255,255,255,1) 20
       display:block;
       /* flex-direction:column; */
     }
-  background-color:black;
+  background-color: #eff0f3;
     h1 {
     margin-top:1rem;
     font-family: 'GFS Didot';
-    color:white;
+    color:#0d0d0d;
     }
     h5 {
       font-family: 'GFS Didot';
-      color:white;
+      color:#0d0d0d;
     }
     p{
       font-family: 'GFS Didot';
-      color:white;
+      color:#0d0d0d;
       font-size:0.8rem;
     }
 `
 
 const Text = styled.div`
-  padding:1rem;
+  color:#0d0d0d;
+  font-size:1.1rem;
+  padding:3rem;
   max-width:800px;
+  background-color: #eff0f3;; 
+  min-height:80vh;
+  box-shadow:
+  /* 0 10.1px 3.6px rgba(0, 0, 0, 0.068), */
+  0 10.4px 10px rgba(0, 0, 0, 0.115),
+  0 2.1px 24.1px rgba(0, 0, 0, 0.048),
+  0 90px 80px rgba(0, 0, 0, 0.055);
+
 `
 
 const LinkStyled = styled(Link)`
+  display:inline-block;
   text-decoration:none;
   color:black;
-  margin-left:2rem;
+  margin-top:2rem;
+  transition: all 300ms ease;
+  &:hover {
+    transform:scale(1.2);
+  }
 `
 
 export const data = graphql`
@@ -108,7 +123,7 @@ const BlogPost = ( { data }) => {
             <MDXRenderer>{data.mdx.body}</MDXRenderer>
         </Text>
       </PageWrapper>
-        <LinkStyled to='/'>&larr; Back to Home</LinkStyled>
+        <LinkStyled to='/'><StaticImage src="../images/slice1.svg" layout="fixed" width={50}  /></LinkStyled>
     </Layout>
   )
 }

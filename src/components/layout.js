@@ -9,9 +9,10 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
 
 import Header from "./header"
-import "./layout.css"
+
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,23 +26,36 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <LayoutWrapper>
+    <Helmet>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet"/>   
+    </Helmet>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       
-        <main>{children}</main>
-        <Footer>
+      <Content>{children}</Content>
+      <Footer>
           © {new Date().getFullYear()},
           {` `}
           <a href="https://www.gatsbyjs.com">Γεώργιος Νίκογλου</a>
-        </Footer>
-    </>
+      </Footer>
+    </LayoutWrapper>
   )
 }
 
+const LayoutWrapper = styled.div`
+  display:flex;
+  min-height:98vh;
+  flex-direction:column;
+`
+
+const Content = styled.div`
+  flex:1;
+`
+
 const Footer = styled.footer`
   text-align:center;
-  bottom:0;
-  right:50;
+  padding-top:1rem;
   a{
     font-family:'GFS Didot' ,sans-serif;
   }

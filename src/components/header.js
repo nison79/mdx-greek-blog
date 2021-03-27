@@ -7,9 +7,10 @@ import styled from 'styled-components'
 const StyledHeader = styled.div`
   display:grid;
   grid-template-columns:200px 1fr 200px;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 50px;
   align-items:center;
-  padding: 0.5rem 1rem; 
+  padding: 1rem 1rem; 
+  margin-bottom: 4rem;
   @media(max-width:960px){
     grid-template-columns:1fr 1fr 1fr;
     place-items:center;
@@ -57,7 +58,7 @@ const Header = ({ siteTitle  }) => (
     </Logo>
     <MenuItems>
       <FlexMenuItems>
-        <h5>λογοτεχνεία</h5>
+        <h5>λογοτεχνία</h5>
         <h5>πολιτική</h5>
         <h5>τεχνολογία</h5>
       </FlexMenuItems>

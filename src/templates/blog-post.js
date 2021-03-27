@@ -19,10 +19,6 @@ const PageWrapper =styled.div`
 
 const TitleAuthor = styled.div`
   display: block;
-  /* flex-direction:column;
-  align-items:center;
-  justify-content:center; */
-  /* min-height:100vh; */
   padding:0rem 2rem;
   margin-right:5rem;
   margin-top:2rem;
@@ -31,8 +27,8 @@ const TitleAuthor = styled.div`
   box-shadow:
   /* 0 10.1px 3.6px rgba(0, 0, 0, 0.068), */
   0 10.4px 10px rgba(0, 0, 0, 0.115),
-  0 2.1px 24.1px rgba(0, 0, 0, 0.048),
-  0 90px 80px rgba(0, 0, 0, 0.055);
+  /* 0 2.1px 24.1px rgba(0, 0, 0, 0.048), */
+  0 90px 80px rgba(0, 0, 0, 0.010);
   animation: transform 600ms ease-in-out;
 
   @keyframes transform {

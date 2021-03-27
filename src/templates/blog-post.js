@@ -58,6 +58,7 @@ const TitleAuthor = styled.div`
     h5 {
       font-family: 'GFS Didot';
       color:#0d0d0d;
+      font-size:1.2rem;
     }
     p{
       font-family: 'GFS Didot';
@@ -86,6 +87,7 @@ const LinkStyled = styled(Link)`
   text-decoration:none;
   color:black;
   margin-top:2rem;
+  margin-left:1rem;
   transition: all 300ms ease;
   &:hover {
     transform:scale(1.2);

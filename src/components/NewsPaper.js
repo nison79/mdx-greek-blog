@@ -36,13 +36,14 @@ const NewPaperLayout = styled.main`
   grid-template-rows: 0.1fr 1fr;
   column-gap:1rem;
   background:#eff0f3;
-  border:1px solid #ff6e6c;
+  border:1px solid #48B7CF;
   padding:0.5rem;
   margin:0.5rem;
+  border-radius:5px;
   font-family:'GFS Didot' ,san-serif;
   p{
     color:#2a2a2a;
-    margin-bottom:1.5rem;
+    margin-bottom:1rem;
     font-family:'GFS Didot' ,san-serif;
     grid-column:1/3;
     grid-row:1/2;
@@ -79,14 +80,11 @@ const StyledLink = styled(Link)`
   
 }
 `
-
 const StyledSpan = styled.span`
   font-size:1.2rem;
+  color: #48B7CF;
 
 `
-
-
-
 
 const NewsPaper = () => {
   const data = useStaticQuery(graphql`
@@ -119,7 +117,7 @@ const NewsPaper = () => {
               <StyledLink to={`/${post.node.frontmatter.slug}`}>
                   <h1>{post.node.frontmatter.title}</h1><StyledSpan>Διαβάστε...</StyledSpan>
               </StyledLink>
-                    <p>{post.node.frontmatter.date}</p>
+                  <p>{post.node.frontmatter.date}</p>
                   <h4>{post.node.frontmatter.excerpt}</h4>
             </NewPaperLayout>
           

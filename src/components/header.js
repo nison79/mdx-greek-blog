@@ -58,9 +58,9 @@ const Header = ({ siteTitle  }) => (
     </Logo>
     <MenuItems>
       <FlexMenuItems>
-        <h5>λογοτεχνία</h5>
         <h5>πολιτική</h5>
-        <h5>τεχνολογία</h5>
+        <h5>κοινωνία</h5>
+        <h5>τέχνη</h5>
       </FlexMenuItems>
     </MenuItems>
   </StyledHeader>

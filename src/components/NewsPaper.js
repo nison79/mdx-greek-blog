@@ -113,7 +113,7 @@ const NewsPaper = () => {
       <PageWrapper >
         {data.allMdx.edges.map(post => (
           
-            <NewPaperLayout>
+            <NewPaperLayout key={post.node.frontmatter.slug}>
               <StyledLink to={`/${post.node.frontmatter.slug}`}>
                   <h1>{post.node.frontmatter.title}</h1><StyledSpan>Διαβάστε...</StyledSpan>
               </StyledLink>

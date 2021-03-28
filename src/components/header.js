@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import Authors from '../components/Authors'
 
 const StyledHeader = styled.div`
   display:grid;
@@ -63,6 +64,7 @@ const Header = ({ siteTitle  }) => (
         <h5>τέχνη</h5>
       </FlexMenuItems>
     </MenuItems>
+      <Authors />
   </StyledHeader>
   
 )

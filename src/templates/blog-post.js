@@ -29,11 +29,11 @@ const TitleAuthor = styled.div`
   0 10.4px 10px rgba(0, 0, 0, 0.115),
   /* 0 2.1px 24.1px rgba(0, 0, 0, 0.048), */
   0 90px 80px rgba(0, 0, 0, 0.010);
-  animation: transform 600ms ease-in-out;
+  animation: transform 1s ease-in-out;
 
   @keyframes transform {
     from {
-      transform:translateY(-1000px);
+      transform:translateX(2000px);
       
     }
     to {

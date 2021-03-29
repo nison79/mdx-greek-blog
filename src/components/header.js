@@ -11,10 +11,11 @@ const StyledHeader = styled.div`
   grid-template-rows: 1fr 50px;
   align-items:center;
   padding: 1rem 1rem; 
-  margin-bottom: 4rem;
-  @media(max-width:960px){
-    grid-template-columns:1fr 1fr 1fr;
-    place-items:center;
+  margin-bottom: 2rem;
+  @media(max-width:1054px){
+    display:flex;
+    flex-direction:column;
+    align-items:center;
   }
 `
 
@@ -41,8 +42,9 @@ const FlexMenuItems = styled.div`
   flex-direction:row;
   justify-content:center;
   h5{
-    padding:1rem;
+    padding-right:1rem;
   }
+  
 `
 
 const Header = ({ siteTitle  }) => (
@@ -52,8 +54,9 @@ const Header = ({ siteTitle  }) => (
         <StaticImage
         src = "../images/header.svg"
         alt="οψεις"
+        placeholder="blurred"
         layout='fixed'
-        width={500}
+        width={400}
         /> 
         </Link>
     </Logo>
@@ -64,7 +67,7 @@ const Header = ({ siteTitle  }) => (
         <h5>τέχνη</h5>
       </FlexMenuItems>
     </MenuItems>
-      <Authors />
+    <Authors />
   </StyledHeader>
   
 )

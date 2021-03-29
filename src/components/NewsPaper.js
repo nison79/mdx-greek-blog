@@ -3,7 +3,10 @@ import { Link , graphql ,useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
 const AllContent =styled.div`
-  
+   h2{
+    font-family:'GFS Didot',sans-serif;
+    margin-left:3.5rem;
+  }
 `
 
 const PageWrapper = styled.div`
@@ -12,20 +15,14 @@ const PageWrapper = styled.div`
   justify-content:center;
   padding:3rem;
   background-color:#f6f7f9;
+ 
+  
   
   @media(max-width:1054px) {
     display:flex;
     flex-direction:column;
     
   }
-  /* width:960px;
-    @media(max-width:960px){
-    width:800px;
-    @media(max-width:780px)
-    width:700px;
-    @media(max-width:600px){
-    width:500px;
-  }  */
 `
 
 const NewPaperLayout = styled.main`
@@ -56,6 +53,7 @@ const NewPaperLayout = styled.main`
     grid-column:1/2;
     grid-row:2/3;
   }
+  
   h4 {
     color:#2a2a2a;
     font-weight:regular;
@@ -110,6 +108,7 @@ const NewsPaper = () => {
 // console.log(data);
   return (
     <AllContent>
+    <h2>Πρόσφατα</h2>
       <PageWrapper >
         {data.allMdx.edges.map(post => (
           

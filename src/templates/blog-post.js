@@ -4,6 +4,7 @@ import { graphql ,Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import styled from 'styled-components'
+import SEO from '../components/seo'
 
 const PageWrapper =styled.div`
   display:grid;
@@ -111,6 +112,7 @@ const BlogPost = ( { data }) => {
 
   return (
     <Layout>
+    <SEO title = {data.mdx.frontmatter.title}  />
       <PageWrapper>
         <TitleAuthor>
           <h1>{data.mdx.frontmatter.title}</h1>

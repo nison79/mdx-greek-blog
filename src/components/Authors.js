@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link , graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 
@@ -68,7 +68,9 @@ const Authors = () => {
         <AuthorBox key = {res.node.frontmatter.slug}>
           <GatsbyImage image = {res.node.frontmatter.avatar.childImageSharp.gatsbyImageData}
           alt = {res.node.frontmatter.author}></GatsbyImage>
-          <AuthorName>{res.node.frontmatter.author}</AuthorName>
+          <Link to={`/${res.node.frontmatter.author}`}>
+            <AuthorName>{res.node.frontmatter.author}</AuthorName>
+          </Link>
         </AuthorBox>
       ))}
     </AuthorsWrapper>

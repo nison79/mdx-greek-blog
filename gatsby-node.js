@@ -1,3 +1,5 @@
+//CREATE PAGES FOR BLOG POST
+
 exports.createPages = async ({ actions , graphql , reporter  }) => {
   const result = await graphql(`
     query {
@@ -27,3 +29,4 @@ exports.createPages = async ({ actions , graphql , reporter  }) => {
     })
   })
 }
+

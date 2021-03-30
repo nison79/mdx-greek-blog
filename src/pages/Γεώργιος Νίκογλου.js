@@ -12,7 +12,8 @@ const image = getImage(data.mdx.frontmatter.avatar.childImageSharp.gatsbyImageDa
   return (
     <Layout>
       <h1>{data.mdx.frontmatter.author}</h1>
-      <GatsbyImage image={image} alt={data.mdx.frontmatter.author}  />
+      <GatsbyImage image={image} alt={data.mdx.frontmatter.author} />
+      <p>{data.mdx.frontmatter.bio}</p>
     </Layout>
   )
 }
@@ -25,14 +26,15 @@ export const PageQuery = graphql`
           avatar {
             childImageSharp {
               gatsbyImageData(formats: WEBP)
-            }
+              }
+              }
+                tags
+                title
+                slug
+                bio
+                date(formatString: "Do MMM YYYY" ,locale :"el_GR")
         }
-      tags
-      title
-      slug
-      date(formatString: "Do MMM YYYY" ,locale :"el_GR")
-    }
-  }
+  } 
 }
 `
 

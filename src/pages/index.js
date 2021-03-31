@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import NewsPaper from '../components/NewsPaper'
 import SEO from "../components/seo"
 import { Helmet } from 'react-helmet'
+import Authors from '../components/Authors'
 
 
 const IndexPage = () => {
@@ -18,6 +19,7 @@ const IndexPage = () => {
       </Helmet>
     
     <NewsPaper />
+    <Authors />
   </Layout>
   )
 }

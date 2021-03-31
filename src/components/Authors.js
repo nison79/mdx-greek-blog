@@ -5,29 +5,22 @@ import styled from 'styled-components'
 
 
 const AuthorsWrapper = styled.div`
-  display:flex;
-  width:467px;
-  height:50px;
-  margin-top:1rem;
-  align-items:center;
-  justify-content:space-between;
-  @media(min-width:1054px){
-    display:block;
-    width:200px;
-    height:150px;
-  }
+  margin-top:8rem;
+  display:grid;
+  grid-template-columns:1fr;
 `
 const AuthorName = styled.p`
   font-family:'GFS Didot' ,sans-serif;
-  font-size:0.8rem;
+  font-size:1rem;
   color:#4AB5CE;
   margin:0;
+  margin-left:3rem;
 `
 const AuthorBox =styled.div`
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  grid-template-rows:50px;
-  place-items:center;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  padding:0.2rem;
 `
 const TextTitle = styled.p`
   margin:0;
@@ -49,7 +42,7 @@ const Authors = () => {
           slug
           avatar {
             childImageSharp {
-              gatsbyImageData(width: 25, layout: FIXED)
+              gatsbyImageData(width: 30, layout: FIXED)
             }
           }
         }
@@ -63,12 +56,13 @@ const Authors = () => {
 
   return (
     <AuthorsWrapper>
-      <TextTitle>Γράφουν:</TextTitle>
       {data.allMdx.edges.map( res => (
         <AuthorBox key = {res.node.frontmatter.slug}>
           <GatsbyImage image = {res.node.frontmatter.avatar.childImageSharp.gatsbyImageData}
           alt = {res.node.frontmatter.author}></GatsbyImage>
-          <Link to={`/${res.node.frontmatter.author}`}><AuthorName>{res.node.frontmatter.author}</AuthorName></Link>
+          <Link to={`/${res.node.frontmatter.author}`}>
+            <AuthorName>{res.node.frontmatter.author}</AuthorName>
+          </Link>
         </AuthorBox>
       ))}
     </AuthorsWrapper>

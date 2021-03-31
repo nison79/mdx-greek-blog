@@ -6,6 +6,7 @@ const AllContent =styled.div`
    h2{
     font-family:'GFS Didot',sans-serif;
     margin-left:3.5rem;
+    margin-top:6rem;
   }
 `
 

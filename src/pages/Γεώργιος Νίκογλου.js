@@ -8,17 +8,19 @@ import { GatsbyImage ,getImage } from 'gatsby-plugin-image'
 const AuthorImageBox =styled.div`
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-self:right;
   grid-column:1/2;
+
 
 `
 
 const PageWrapper = styled.div`
   display:grid;
   place-items:center;
-  grid-template-columns:1fr 100px 1fr;
+  grid-template-columns:1fr 50px 1fr;
   p{
     grid-column:3/4;
+    margin-right:4rem;
   }
 
 `

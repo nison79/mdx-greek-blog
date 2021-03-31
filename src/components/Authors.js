@@ -5,30 +5,38 @@ import styled from 'styled-components'
 
 
 const AuthorsWrapper = styled.div`
-  margin-top:8rem;
+  margin-top:2rem;
   display:grid;
-  grid-template-columns:1fr;
+  grid-template-columns:2fr 2fr 2fr 2fr ;
+  grid-template-rows:auto;
+  /* place-self:center; */
+  max-width:100%;
+  @media(max-width:812px) {
+    grid-template-columns:1fr 1fr ;
+  }
 `
 const AuthorName = styled.p`
   font-family:'GFS Didot' ,sans-serif;
   font-size:1rem;
   color:#4AB5CE;
-  margin:0;
-  margin-left:3rem;
+  margin-left:2rem;
+  
 `
 const AuthorBox =styled.div`
   display:flex;
   flex-direction:row;
   align-items:center;
-  padding:0.2rem;
-`
-const TextTitle = styled.p`
-  margin:0;
-  margin-bottom:8px;
-  padding:0;
-  font-size:0.8rem;
+  justify-content:center;
+  padding:1rem;
   
 `
+// const TextTitle = styled.p`
+//   margin:0;
+//   margin-bottom:8px;
+//   padding:0;
+//   font-size:0.8rem;
+  
+// `
 
 
 const Authors = () => {
@@ -42,7 +50,7 @@ const Authors = () => {
           slug
           avatar {
             childImageSharp {
-              gatsbyImageData(width: 30, layout: FIXED)
+              gatsbyImageData(width: 50, layout: FIXED)
             }
           }
         }

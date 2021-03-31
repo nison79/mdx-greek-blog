@@ -10,7 +10,12 @@ const AuthorImageBox =styled.div`
   align-items:center;
   justify-self:right;
   grid-column:1/2;
-
+  padding:2rem;
+  padding-right:8rem;
+  @media(max-width:960px) {
+    padding:1rem;
+    padding-right:1rem;
+  }
 
 `
 
@@ -18,9 +23,14 @@ const PageWrapper = styled.div`
   display:grid;
   place-items:center;
   grid-template-columns:1fr 50px 1fr;
+  padding:2rem;
   p{
     grid-column:3/4;
-    margin-right:4rem;
+    margin-right:8rem;
+    @media(max-width:960px) {
+      margin-right:1rem;
+    
+  }
   }
 
 `
